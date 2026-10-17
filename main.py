@@ -6,3 +6,6 @@ def add(a, b):
     return a + b
 
 print("Calculator result:", add(10, 5))
+
+
+print("This change was made by Developer 1")
