@@ -12,3 +12,4 @@ print("This change was made by Developer 1")
 
 print("Developer 1 made another update using VS Code")
 print("Learning Git Push and Pull - Practice 2")
+print("Hello from Developer 2")
