@@ -1,2 +1,2 @@
 print("Hello GitHub!")
-print("This is my first Git practice project.")
+print("This is my second Git update.")
