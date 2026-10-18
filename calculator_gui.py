@@ -22,7 +22,10 @@ def calculate(operation):
 
     except ValueError:
         result_label.config(text="Enter valid numbers")
-
+def clear_fields():
+    entry1.delete(0, tk.END)
+    entry2.delete(0, tk.END)
+    result_label.config(text="Result:")
 
 root = tk.Tk()
 root.title("My Python Calculator")
@@ -51,5 +54,9 @@ tk.Button(root, text="Divide (/)",
 result_label = tk.Label(root, text="Result:",
                         font=("Arial", 12, "bold"))
 result_label.pack(pady=10)
-
+tk.Button(
+    root,
+    text="Clear",
+    command=clear_fields
+).pack(pady=5)
 root.mainloop()
