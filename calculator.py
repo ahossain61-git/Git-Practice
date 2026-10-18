@@ -1,4 +1,5 @@
 
+
 def add(a, b):
     return a + b
 
@@ -13,7 +14,29 @@ def divide(a, b):
         return "Cannot divide by zero"
     return a / b
 
-print("Addition:", add(10, 5))
-print("Subtraction:", subtract(10, 5))
-print("Multiplication:", multiply(10, 5))
-print("Division:", divide(10, 5))
+
+print("=== My Python Calculator ===")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+choice = input("Choose operation (1-4): ")
+
+if choice == "1":
+    result = add(num1, num2)
+elif choice == "2":
+    result = subtract(num1, num2)
+elif choice == "3":
+    result = multiply(num1, num2)
+elif choice == "4":
+    result = divide(num1, num2)
+else:
+    result = "Invalid choice"
+
+print("Result:", result)
+
