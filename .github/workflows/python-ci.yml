@@ -1,0 +1,39 @@
+
+
+
+name: Python Calculator CI
+
+on:
+  push:
+    branches: [main, feature-github-actions]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Check Python version
+        run: python --version
+
+      - name: Check Python syntax
+        run: |
+          python -m py_compile main.py
+          python -m py_compile calculator.py
+          python -m py_compile calculator_gui.py
+
+      - name: CI completed
+        run: echo "Python syntax checks passed!"
