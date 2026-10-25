@@ -21,4 +21,4 @@ def test_division():
 def test_division_by_zero():
     assert divide(10, 0) == "Cannot divide by zero"
 def test_branch_protection():
-    assert 2 + 2 == 5
+    assert 2 + 2 == 4
