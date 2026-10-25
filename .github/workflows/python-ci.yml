@@ -5,9 +5,13 @@ name: Python Calculator CI
 
 on:
   push:
-    branches: [main, feature-github-actions]
+    branches:
+      - main
+      - feature-failing-test
+      - fix-failing-test
   pull_request:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
