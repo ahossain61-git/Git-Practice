@@ -1,0 +1,37 @@
+
+name: Build Windows Calculator EXE
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install PyInstaller
+        run: python -m pip install pyinstaller
+
+      - name: Build Calculator EXE
+        run: python -m PyInstaller --onefile --windowed --name Calculator calculator_gui.py
+
+      - name: Upload Windows EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: Calculator-Windows
+          path: dist/Calculator.exe
+          if-no-files-found: error
